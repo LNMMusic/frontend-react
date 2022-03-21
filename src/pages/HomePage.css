@@ -1,0 +1,144 @@
+/* SECTIONS */
+.section-hero {
+    background: url('../assets/images/background-hero.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    height: 720px;
+}
+
+.navbar {
+    background: rgba(122, 122, 122, 0.226);
+    height: 50px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.navbar:hover {
+    background: rgba(179, 179, 179, 0.226);
+    transition: background 350ms ease-in-out;
+}
+.navbar-item {
+    font-family: 'Roboto-Bold';
+    letter-spacing: 0.3em;
+    font-size: 1.4em;
+
+    color: rgb(214, 214, 214);
+    cursor: pointer;
+}
+
+
+.content {
+    margin-top: 2rem;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+.content-form {
+    width: 100%;
+    height: 275px;
+    background-color: rgba(169, 169, 169, 0.089);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formik Custom */
+.formik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding-inline: 2rem;
+}
+.formik-button {
+    font-family: 'Roboto-Bold';
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: var(--text-primary);
+    border: none;    outline: none;    cursor: pointer;
+    
+    padding: 0.5rem;
+}
+.formik-inputWrapper {
+    display: grid;
+    grid-template-areas: "label input"
+                         "space error";
+    column-gap: 1.2rem;
+    row-gap: 0.5rem;
+    align-items: center;
+}
+.formik-inputWrapper-label {
+    grid-area: label;
+    min-width: 90px;
+    
+    font-family: 'Roboto-Bold';
+    font-size: 1.5em;
+    color: var(--text-primary);
+}
+.formik-inputWrapper-input {
+    width: 100%;
+    min-width: 50px;
+    grid-area: input;
+    border: none;    outline: none;
+    padding: 0.5rem;
+
+    text-align: center;
+    font-family: 'Roboto-Bold';
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: var(--text-primary);
+}
+.formik-inputWrapper-error {
+    grid-area: error;
+    color: var(--text-primary);
+}
+.formik-result {
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+
+
+.content-info {
+    margin-right: 1rem;
+}
+.content-info h1 {
+    font-family: 'Indie';
+    font-size: 6em;
+    padding-top: 1rem;
+
+    color: rgba(73, 73, 73, 0.452);
+    transition: color 250ms ease-in-out;
+}
+.content-info h1:hover {
+    cursor: default;
+    color: rgba(126, 126, 126, 0.452);
+    transition: color 250ms ease-in-out;
+}
+
+.content-info .line {
+    display: flex;
+    justify-content: start;
+    
+    height: 5px;
+    border-radius: 0 0 0 1rem;
+    background: linear-gradient(100deg, rgba(63, 63, 63, 0.8) 5%, rgba(255, 255, 255, 0) 80%);
+}
+.content-info p {
+    font-family: 'Roboto-Italic';
+    font-size: 1.1rem;
+    padding-left: 0.5rem;
+    color: rgba(73, 73, 73, 0.733);
+}
+.content-info p::before {
+    content: "\275D";
+    margin-right: 0.5rem;
+}
+.content-info p::after {
+    content: "\275E";
+    margin-left: 0.5rem;
+}
