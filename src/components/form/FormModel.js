@@ -19,7 +19,7 @@ const FormCarCreate = () => {
     // Form [http]
     const http = {
         method: "GET",
-        url:    "/car/create",
+        url:    "/api/car/create",
         auth:   null
     }
     const FormSubmission = async (http, body) => {

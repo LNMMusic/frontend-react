@@ -51,7 +51,7 @@ const FormCar = () => {
             onSubmit={(values, { resetForm }) => {
                 const http = {
                     method: "GET",
-                    url:    `/car/?car_plate=${values.car_plate}`
+                    url:    `/api/car/?car_plate=${values.car_plate}`
                 }
                 FormSubmission(http)
                 resetForm();
