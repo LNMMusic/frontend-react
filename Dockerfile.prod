@@ -1,5 +1,5 @@
 # BUILD STAGE   -------------------------------
-FROM node:14.19-alpine3.14
+FROM node:14.19-alpine3.14 as build
 
 # Current Dir
 WORKDIR /frontend
