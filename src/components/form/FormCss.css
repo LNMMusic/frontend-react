@@ -1,0 +1,56 @@
+.formik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding-inline: 2rem;
+}
+
+.formik-fields .wrapperInput {
+    display: grid;
+    grid-template-areas: "label input"
+                         "space error";
+    column-gap: 1.2rem;
+    row-gap: 0.5rem;
+    align-items: center;
+}
+.wrapperInput-label {
+    grid-area: label;
+    min-width: 90px;
+    
+    font-family: 'Roboto-Bold';
+    font-size: 1.5em;
+    color: var(--text-primary);
+}
+.wrapperInput-input {
+    width: 100%;
+    min-width: 50px;
+    grid-area: input;
+    border: none;    outline: none;
+    padding: 0.5rem;
+
+    text-align: center;
+    font-family: 'Roboto-Bold';
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: var(--text-primary);
+}
+.wrapperInput-error {
+    grid-area: error;
+    color: var(--text-primary);
+}
+
+.formik-button {
+    font-family: 'Roboto-Bold';
+    font-size: 1.3em;
+    background-color: rgba(255, 255, 255, 0.103);
+    color: var(--text-primary);
+    border: none;    outline: none;    cursor: pointer;
+    
+    padding: 0.5rem;
+}
+.formik-response {
+    color: var(--text-primary);
+    text-transform: uppercase;
+}

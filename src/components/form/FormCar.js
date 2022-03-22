@@ -1,14 +1,15 @@
 // LIBS
 import React, { useState } from 'react'
 import { Formik, Form } from 'formik'
-import InputField from './wrapper/InputField';
-import * as Yup from 'yup';
+import InputField from './wrapper/InputField'
+import * as Yup from 'yup'
+import './FormCss.css'
 
 
 
 const FormCar = () => {
     // State
-    const [result, setResult] = useState(null);
+    const [response, setResponse] = useState(null);
     const fields = {
         initial: {
             car_plate: ''
@@ -30,17 +31,19 @@ const FormCar = () => {
                 "Content-Type": "application/json"
             }
         }
-        console.log(request)
         // response
         try {
             const response = await fetch(url, request)
-            const data = await response.json()
-            setResult(data["data"])
+            if (!response.ok) {
+                setResponse(`not found`)
+            } else {
+                const data = await response.json()
+                setResponse(data["data"])
+            }
         } catch (e) {
-            alert(e)
+            setResponse(`Something went wrong:\n${JSON.stringify(e)}`)
         }
     }
-
     return (
         <Formik
             initialValues={fields.initial}
@@ -64,8 +67,8 @@ const FormCar = () => {
                     />
                 </div>
                 <button type="submit" className='formik-button'>Search</button>
-                <h2 className="formik-result">
-                    {result}
+                <h2 className="formik-response">
+                    {response}
                 </h2>
             </Form>
         </Formik>

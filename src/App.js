@@ -4,7 +4,6 @@ import './App.css';
 // Pages
 import HomePage from './pages/HomePage'
 // Components
-// ...
 
 
 

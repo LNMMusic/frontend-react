@@ -1,11 +1,12 @@
 /* SECTIONS */
-.section-hero {
+body {
     background: url('../assets/images/background-hero.jpg');
     background-repeat: no-repeat;
-    background-size:cover;
-    height: 720px;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
+/* NAVBAR */
 .navbar {
     background: rgba(122, 122, 122, 0.226);
     height: 50px;
@@ -28,6 +29,7 @@
 }
 
 
+/* HERO */
 .content {
     margin-top: 2rem;
 
@@ -35,6 +37,8 @@
     grid-template-columns: 2fr 1fr;
     gap: 3rem;
 }
+
+/* HERO [Forms] */
 .content-form {
     width: 100%;
     height: 275px;
@@ -44,65 +48,7 @@
     justify-content: center;
     align-items: center;
 }
-
-/* Formik Custom */
-.formik {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    padding-inline: 2rem;
-}
-.formik-button {
-    font-family: 'Roboto-Bold';
-    font-size: 1.3em;
-    background-color: rgba(255, 255, 255, 0.103);
-    color: var(--text-primary);
-    border: none;    outline: none;    cursor: pointer;
-    
-    padding: 0.5rem;
-}
-.formik-inputWrapper {
-    display: grid;
-    grid-template-areas: "label input"
-                         "space error";
-    column-gap: 1.2rem;
-    row-gap: 0.5rem;
-    align-items: center;
-}
-.formik-inputWrapper-label {
-    grid-area: label;
-    min-width: 90px;
-    
-    font-family: 'Roboto-Bold';
-    font-size: 1.5em;
-    color: var(--text-primary);
-}
-.formik-inputWrapper-input {
-    width: 100%;
-    min-width: 50px;
-    grid-area: input;
-    border: none;    outline: none;
-    padding: 0.5rem;
-
-    text-align: center;
-    font-family: 'Roboto-Bold';
-    font-size: 1.3em;
-    background-color: rgba(255, 255, 255, 0.103);
-    color: var(--text-primary);
-}
-.formik-inputWrapper-error {
-    grid-area: error;
-    color: var(--text-primary);
-}
-.formik-result {
-    color: var(--text-primary);
-    text-transform: uppercase;
-}
-
-
-
+/* HERO [Info] */
 .content-info {
     margin-right: 1rem;
 }
@@ -111,13 +57,11 @@
     font-size: 6em;
     padding-top: 1rem;
 
-    color: rgba(73, 73, 73, 0.452);
+    color: var(--text-secondary);
     transition: color 250ms ease-in-out;
 }
 .content-info h1:hover {
     cursor: default;
-    color: rgba(126, 126, 126, 0.452);
-    transition: color 250ms ease-in-out;
 }
 
 .content-info .line {
@@ -141,4 +85,40 @@
 .content-info p::after {
     content: "\275E";
     margin-left: 0.5rem;
+}
+
+/* ANIMATIONS */
+.content-info h1 {
+    animation: lightning 5s forwards infinite alternate-reverse
+}
+@keyframes lightning {
+    0% {color: var(--text-secondary);}
+    50% {color: var(--text-thirdy);}
+    75% {color: var(--text-secondary);}
+    97% {color: var(--text-thirdy);}
+    100% {color: var(--text-secondary)}
+}
+
+/* RESPONSIVE */
+@media (max-width: 540px) {
+    .content {
+        grid-template-columns: none;
+        grid-template-areas: 'info'
+                             'form';
+    }
+    .content-form {
+        grid-area: form;
+    }
+    .content-info {
+        margin-right: 0;
+
+        grid-area: info;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-info .line {
+        display: none;
+    }
 }

@@ -7,11 +7,11 @@ const InputField = ({ label, ...props }) => {
     const [field, meta] = useField(props);
 
     return (
-        <div className='formik-inputWrapper'>
-            <label htmlFor={props.id || props.name} className="formik-inputWrapper-label">{label}</label>
-            <input className="text-input formik-inputWrapper-input" {...field} {...props} />
+        <div className='wrapperInput'>
+            <label htmlFor={props.id || props.name} className="wrapperInput-label">{label}</label>
+            <input className="text-input wrapperInput-input" {...field} {...props} />
             {meta.touched && meta.error ? (
-                <div className="error formik-inputWrapper-error">{meta.error}</div>
+                <div className="error wrapperInput-error">{meta.error}</div>
             ) : null}
         </div>
     );
