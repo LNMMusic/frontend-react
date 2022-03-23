@@ -1,0 +1,45 @@
+.dataPlate table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: rgba(54, 52, 52, 0.726);
+    border-radius: 5px;
+    outline: 1px solid rgba(255, 255, 255, 0.151);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.dataPlate table {
+    -webkit-box-shadow: -1px -1px 10px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow: -2px -2px 20px 10px rgba(0,0,0,0.425);
+    box-shadow: -3px -3px 25px 10px rgba(49, 13, 13, 0.35);
+    transition: box-shadow 350ms ease-out;
+}
+.dataPlate table thead {
+    background: #615b38;
+}
+.dataPlate table tbody td {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.dataPlate table th, table td {
+    text-align: center;
+    padding: 0.2rem;
+    padding-inline: 0.5rem;
+}
+
+
+.dataPlate table th {
+    font-size: 1.1rem;
+}
+.dataPlate table td {
+    font-size: 1.4rem;
+}
+
+.dataPlate table:hover {
+    cursor: default;
+    box-shadow: -3px -3px 40px 15px rgba(73, 65, 23, 0.35);
+    transition: box-shadow 350ms ease-out;
+}
