@@ -4,6 +4,8 @@ import { Formik, Form } from 'formik'
 import InputField from './wrapper/InputField'
 import * as Yup from 'yup'
 import './FormCss.css'
+// Components
+import DataPlate from '../DataPlate'
 
 
 
@@ -38,7 +40,7 @@ const FormCar = () => {
                 setResponse(`not found`)
             } else {
                 const data = await response.json()
-                setResponse(data["data"])
+                setResponse(<DataPlate data={data}/>)
             }
         } catch (e) {
             setResponse(`Something went wrong:\n${JSON.stringify(e)}`)
@@ -51,7 +53,7 @@ const FormCar = () => {
             onSubmit={(values, { resetForm }) => {
                 const http = {
                     method: "GET",
-                    url:    `/api/car/?car_plate=${values.car_plate}`
+                    url:    `/api/car/get/${values.car_plate}`
                 }
                 FormSubmission(http)
                 resetForm();
